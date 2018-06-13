@@ -1,0 +1,17 @@
+
+<h1>Welcome to the homepage</h1>
+
+<%= @posts %>
+
+<% @posts.each do |post| %>
+  <a href="/<%= post[:id] %>">
+    <h3><%= post[:title] %></h3>
+  </a>
+  <a href="/<%= post[:id]%>/edit">Edit</a>
+
+  <form action="/<%= post[:id]%>" method="post">
+    <input type="submit" value="delete">
+    <input type="hidden" name="_method" value="DELETE">
+  </form>
+
+<% end %>
